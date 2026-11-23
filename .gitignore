@@ -1,0 +1,14 @@
+# OS / editor clutter
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+.vscode/
+.idea/
+# never publish source material, test output or local tooling
+Source/
+screenshots/
+compare*/
+verify*/
+node_modules/
+*.log

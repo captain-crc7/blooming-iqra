@@ -1,0 +1,5 @@
+# Netlify: always revalidate the page so new HTML never pairs with old CSS/JS
+/
+  Cache-Control: no-cache
+/*.html
+  Cache-Control: no-cache

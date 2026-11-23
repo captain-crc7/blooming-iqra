@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    /* Runs first, before anything renders.
+       1. Every load / refresh starts at the Hero: no browser scroll restoration, no #hash jump. */
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    if (location.hash) history.replaceState(null, '', location.pathname + location.search);
+    window.scrollTo(0, 0);
+    /* 2. Progressive enhancement: hidden start states only exist under html.js.anim,
+          and .anim is added by main.js once it has actually started. */
+    (function (d) {
+      d.className = d.className.replace('no-js', 'js');
+      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) d.classList.add('motion', 'is-loading');
+      /* Safety nets: the loader and the scroll lock can never stay; if main.js never starts, reveal everything. */
+      setTimeout(function () { d.classList.add('intro-done'); d.classList.remove('is-loading'); }, 2000);
+      setTimeout(function () { if (!window.__bloomReady) d.classList.add('reveal-all'); }, 3000);
+    })(document.documentElement);
+  </script>
+  <title>Blooming Iqra | Growing Ideas, People &amp; Perspectives</title>
+  <meta name="description" content="Blooming Iqra is the personal platform of Sabekunnahar Iqra, a community development, youth empowerment and policy practitioner from Barishal, Bangladesh. A space to explore ideas, grow people and see the world differently.">
+  <meta name="author" content="Sabekunnahar Iqra">
+  <meta name="theme-color" content="#68283A">
+
+  <link rel="canonical" href="https://bloomingiqra.com/">
+  <!-- Open Graph / Twitter (absolute URLs: social networks require them) -->
+  <meta property="og:url" content="https://bloomingiqra.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Blooming Iqra">
+  <meta property="og:title" content="Blooming Iqra | Growing Ideas, People &amp; Perspectives">
+  <meta property="og:description" content="Sabekunnahar Iqra: Community Development, Youth Empowerment & Policy Practitioner. A space to explore ideas, grow people and see the world differently.">
+  <meta property="og:image" content="https://bloomingiqra.com/assets/img/og-image.jpg?v=202611230800">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="bn_BD">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Blooming Iqra | Growing Ideas, People &amp; Perspectives">
+  <meta name="twitter:description" content="Sabekunnahar Iqra: Community Development, Youth Empowerment & Policy Practitioner.">
+  <meta name="twitter:image" content="https://bloomingiqra.com/assets/img/og-image.jpg?v=202611230800">
+
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..600,0..100;1,9..144,300..600,0..100&family=Manrope:wght@400;500;600;700;800&family=Noto+Serif+Bengali:wght@400;500;600&family=Hind+Siliguri:wght@400;500;600;700&display=swap">
+  <link rel="preload" as="image" type="image/webp" imagesrcset="assets/img/iqra-hero-480.webp?v=202611230800 480w, assets/img/iqra-hero.webp?v=202611230800 546w" imagesizes="(min-width: 900px) 470px, 92vw">
+  <!-- ?v= is a cache-buster (YYYYMMDDhhmm): change it on every edit to style.css / main.js -->
+  <link rel="stylesheet" href="assets/css/style.css?v=202611230800">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Sabekunnahar Iqra",
+    "alternateName": "Blooming Iqra",
+    "jobTitle": "Community Development, Youth Empowerment & Policy Practitioner",
+    "description": "Facilitator, trainer and project lead working on youth leadership, women empowerment and civic engagement in Barishal, Bangladesh.",
+    "email": "mailto:siqra.bu@gmail.com",
+    "telephone": "+8801621521421",
+    "url": "https://bloomingiqra.com/",
+    "image": "https://bloomingiqra.com/assets/img/iqra-hero.jpg?v=202611230800",
+    "address": { "@type": "PostalAddress", "addressLocality": "Barishal", "addressCountry": "BD" },
+    "alumniOf": { "@type": "CollegeOrUniversity", "name": "University of Barishal" },
+    "knowsLanguage": ["bn", "en"],
+    "knowsAbout": ["Youth Engagement", "Leadership", "Community Development", "Women Empowerment", "Facilitation", "Policy Advocacy", "Civic Engagement", "Democracy", "Human Rights"],
+    "award": "Winner, Solution Hunt 2.0 (Volunteer for Bangladesh)",
+    "sameAs": []
+  }
+  </script>
+</head>
+<body>
+<a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
+
+<!-- Reusable SVG symbols -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="bloom" viewBox="0 0 40 40">
+    <g fill="rgba(104,40,58,.14)" stroke="#68283A" stroke-width="1.4" stroke-linejoin="round">
+      <path d="M20 19.5C16.6 15 16.4 8.5 20 4c3.6 4.5 3.4 11 0 15.5z"/>
+      <path d="M20 19.5C16.6 15 16.4 8.5 20 4c3.6 4.5 3.4 11 0 15.5z" transform="rotate(72 20 20)"/>
+      <path d="M20 19.5C16.6 15 16.4 8.5 20 4c3.6 4.5 3.4 11 0 15.5z" transform="rotate(144 20 20)"/>
+      <path d="M20 19.5C16.6 15 16.4 8.5 20 4c3.6 4.5 3.4 11 0 15.5z" transform="rotate(216 20 20)"/>
+      <path d="M20 19.5C16.6 15 16.4 8.5 20 4c3.6 4.5 3.4 11 0 15.5z" transform="rotate(288 20 20)"/>
+    </g>
+    <circle cx="20" cy="20" r="2.6" fill="#9CA894"/>
+  </symbol>
+  <symbol id="bloom-light" viewBox="0 0 40 40">
+    <g fill="rgba(156,168,148,.18)" stroke="#9CA894" stroke-width="1.4" stroke-linejoin="round">
+      <path d="M20 19.5C16.6 15 16.4 8.5 20 4c3.6 4.5 3.4 11 0 15.5z"/>
+      <path d="M20 19.5C16.6 15 16.4 8.5 20 4c3.6 4.5 3.4 11 0 15.5z" transform="rotate(72 20 20)"/>
+      <path d="M20 19.5C16.6 15 16.4 8.5 20 4c3.6 4.5 3.4 11 0 15.5z" transform="rotate(144 20 20)"/>
+      <path d="M20 19.5C16.6 15 16.4 8.5 20 4c3.6 4.5 3.4 11 0 15.5z" transform="rotate(216 20 20)"/>
+      <path d="M20 19.5C16.6 15 16.4 8.5 20 4c3.6 4.5 3.4 11 0 15.5z" transform="rotate(288 20 20)"/>
+    </g>
+    <circle cx="20" cy="20" r="2.6" fill="#F7F1E8"/>
+  </symbol>
+  <symbol id="petal" viewBox="0 0 120 120">
+    <path d="M60 60C40 48 34 22 60 4c26 18 20 44 0 56z"/>
+    <path d="M60 60C72 40 98 34 116 60c-18 26-44 20-56 0z"/>
+    <path d="M60 60C48 80 22 86 4 60c18-26 44-20 56 0z"/>
+  </symbol>
+  <symbol id="arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</svg>
+
+<!-- Intro loader (shown only with JS + motion; CSS hides it by 1.5s even if JS fails) -->
+<div class="loader" aria-hidden="true">
+  <svg class="loader-bloom" viewBox="0 0 40 40">
+    <g fill="none" stroke="#68283A" stroke-width="1.2" stroke-linejoin="round">
+      <path pathLength="1" d="M20 19.5C16.6 15 16.4 8.5 20 4c3.6 4.5 3.4 11 0 15.5z"/>
+      <path pathLength="1" d="M20 19.5C16.6 15 16.4 8.5 20 4c3.6 4.5 3.4 11 0 15.5z" transform="rotate(72 20 20)"/>
+      <path pathLength="1" d="M20 19.5C16.6 15 16.4 8.5 20 4c3.6 4.5 3.4 11 0 15.5z" transform="rotate(144 20 20)"/>
+      <path pathLength="1" d="M20 19.5C16.6 15 16.4 8.5 20 4c3.6 4.5 3.4 11 0 15.5z" transform="rotate(216 20 20)"/>
+      <path pathLength="1" d="M20 19.5C16.6 15 16.4 8.5 20 4c3.6 4.5 3.4 11 0 15.5z" transform="rotate(288 20 20)"/>
+    </g>
+    <circle class="loader-core" cx="20" cy="20" r="2.6" fill="#9CA894"/>
+  </svg>
+</div>
+
+<!-- Scroll-progress stem (left edge) -->
+<div class="progress-stem" aria-hidden="true">
+  <span class="ps-line"></span>
+  <svg class="ps-bloom"><use href="#bloom-light"/></svg>
+</div>
+
+<!-- Custom cursor (desktop, fine pointer only) -->
+<div class="cursor" aria-hidden="true"><span class="cursor-dot"></span><svg class="cursor-bloom"><use href="#bloom"/></svg></div>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header" id="top">
+  <div class="container">
+    <a href="#top" class="brand" aria-label="Blooming Iqra, back to top">
+      <svg aria-hidden="true"><use href="#bloom"/></svg>
+      <span>Blooming <em>Iqra</em></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <ul>
+        <li><a href="#about" data-i18n="nav.about">About</a></li>
+        <li><a href="#ideas" data-i18n="nav.ideas">Ideas</a></li>
+        <li><a href="#journey" data-i18n="nav.journey">Journey</a></li>
+        <li><a href="#impact" data-i18n="nav.impact">Impact</a></li>
+        <li><a href="#values" data-i18n="nav.values">Values</a></li>
+        <li><a href="#connect" data-i18n="nav.connect">Connect</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <div class="lang-toggle" role="group" aria-label="Language">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="bn" aria-pressed="false" lang="bn">বাংলা</button>
+      </div>
+      <a href="#connect" class="btn btn-primary header-cta magnetic" data-i18n="cta.connect">Let's Connect</a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu" data-i18n-aria="menu.open"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+  <nav aria-label="Mobile">
+    <ul>
+      <li><a href="#about" data-i18n="nav.about">About</a></li>
+      <li><a href="#ideas" data-i18n="nav.ideas">Ideas</a></li>
+      <li><a href="#journey" data-i18n="nav.journey">Journey</a></li>
+      <li><a href="#impact" data-i18n="nav.impact">Impact</a></li>
+      <li><a href="#values" data-i18n="nav.values">Values</a></li>
+      <li><a href="#connect" data-i18n="nav.connect">Connect</a></li>
+    </ul>
+  </nav>
+  <a href="#connect" class="btn btn-primary" data-i18n="cta.connect">Let's Connect</a>
+  <svg class="menu-bloom" aria-hidden="true"><use href="#bloom-light"/></svg>
+</div>
+
+<main id="main">
+
+<!-- ============ 1. HERO ============ -->
+<section class="hero" aria-labelledby="hero-title">
+  <canvas class="petal-canvas" aria-hidden="true"></canvas>
+  <div class="container">
+    <div class="hero-copy">
+      <h1 id="hero-title" class="hero-title split" data-split="words" lang="en">Blooming <em>Iqra</em></h1>
+      <p class="hero-sub split" data-split="words" data-i18n="hero.sub">Growing Ideas, People &amp; <em>Perspectives.</em></p>
+      <p class="hero-line reveal" data-delay="7" data-i18n="hero.line">A space to explore ideas, grow people and see the world differently.</p>
+      <div class="cta-row reveal" data-delay="8">
+        <a href="#journey" class="btn btn-primary magnetic"><span data-i18n="hero.cta1">Explore My Journey</span><svg aria-hidden="true"><use href="#arrow"/></svg></a>
+        <a href="#connect" class="btn btn-outline magnetic" data-i18n="hero.cta2">Invite Me to Collaborate</a>
+      </div>
+    </div>
+
+    <div class="hero-visual reveal" data-delay="2">
+      <div class="arch">
+        <div class="arch-mask">
+          <picture class="parallax">
+            <source type="image/webp" srcset="assets/img/iqra-hero-480.webp?v=202611230800 480w, assets/img/iqra-hero.webp?v=202611230800 546w" sizes="(min-width: 900px) 470px, 92vw">
+            <img src="assets/img/iqra-hero.jpg?v=202611230800" srcset="assets/img/iqra-hero-480.jpg?v=202611230800 480w, assets/img/iqra-hero.jpg?v=202611230800 546w" sizes="(min-width: 900px) 470px, 92vw" width="546" height="792" alt="Sabekunnahar Iqra smiling softly, hand at her chin, standing in a warmly lit arch" data-i18n-alt="hero.alt" fetchpriority="high">
+          </picture>
+        </div>
+      </div>
+      <svg class="hero-petals draw" viewBox="0 0 620 760" aria-hidden="true">
+        <path class="s" pathLength="1" d="M54 760C34 640 92 560 56 470C26 392 70 330 46 250C30 196 48 150 82 112"/>
+        <path class="s" pathLength="1" d="M56 470C14 458-4 420 10 384C44 394 60 428 56 470Z"/>
+        <path class="w" pathLength="1" d="M50 300C92 284 112 252 104 218C70 228 52 262 50 300Z"/>
+        <path class="s" pathLength="1" d="M420 40C520 8 612 70 616 172C618 222 608 262 592 296"/>
+        <path class="w" pathLength="1" d="M560 84C566 52 592 36 614 44C612 72 590 90 560 84ZM560 84C536 64 536 34 552 18C570 34 574 62 560 84Z"/>
+        <path class="s" pathLength="1" d="M600 560C620 600 612 660 572 700C552 720 524 730 496 732"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2. ABOUT ============ -->
+<section class="section" id="about" aria-labelledby="about-title">
+  <div class="container about-grid">
+    <figure class="about-photo reveal">
+      <picture>
+        <source srcset="assets/img/iqra-about.webp" type="image/webp">
+        <img src="assets/img/iqra-about.jpg" width="960" height="1200" loading="lazy" decoding="async" alt="Sabekunnahar Iqra holding a sunflower close, eyes lowered in a reflective moment" data-i18n-alt="about.alt">
+      </picture>
+    </figure>
+    <div class="about-text">
+      <p class="eyebrow reveal" data-i18n="about.eyebrow">About</p>
+      <h2 id="about-title" class="h2 split" data-i18n="about.title">Hello, I'm <em>Iqra.</em></h2>
+      <p class="lead reveal" data-delay="1" data-i18n="about.p">I'm Sabekunnahar Iqra, a Political Science graduate of the University of Barishal (MSS ongoing). I facilitate, train and mentor young people, and lead community and women-empowerment work in Barishal.</p>
+      <blockquote class="pull-quote reveal" data-delay="2" data-i18n="about.quote">Meaningful change begins with meaningful growth.</blockquote>
+      <ul class="role-chips reveal" data-delay="3" aria-label="Roles">
+        <li data-i18n="role.explorer">Explorer</li>
+        <li data-i18n="role.connector">Connector</li>
+        <li data-i18n="role.reflector">Reflector</li>
+        <li data-i18n="role.advocate">Advocate</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3. TERRITORIES ============ -->
+<section class="section rule-top" id="ideas" aria-labelledby="ideas-title">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow reveal" data-i18n="terr.eyebrow">The Three Territories</p>
+      <h2 id="ideas-title" class="h2 split" data-i18n="terr.title">Where the conversation <em>grows.</em></h2>
+    </div>
+    <div class="terr-grid">
+      <article class="terr-card reveal" data-delay="1">
+        <svg class="card-petal" aria-hidden="true"><use href="#petal"/></svg>
+        <div class="terr-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2V16h5v-.1c0-.8.4-1.5 1-2A6 6 0 0 0 12 3z"/><path d="M12 7v3M10.5 8.5h3"/></svg></div>
+        <h3 data-i18n="terr.ideas">Ideas</h3>
+        <p class="line" data-i18n="terr.ideasL">What we create, explore &amp; imagine.</p>
+        <ul class="tags" data-i18n="terr.ideasT"><li class="tag">Creativity</li><li class="tag">Art Meditation</li><li class="tag">Stories</li></ul>
+      </article>
+      <article class="terr-card reveal" data-delay="2">
+        <svg class="card-petal" aria-hidden="true"><use href="#petal"/></svg>
+        <div class="terr-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.4 2.7-6 6-6s6 2.6 6 6"/><circle cx="17" cy="9" r="2.5"/><path d="M15.5 14.3c.5-.2 1-.3 1.5-.3 2.8 0 4.5 2.2 4.5 5"/></svg></div>
+        <h3 data-i18n="terr.people">People</h3>
+        <p class="line" data-i18n="terr.peopleL">Who we grow with, learn from &amp; stand for.</p>
+        <ul class="tags" data-i18n="terr.peopleT"><li class="tag">Youth</li><li class="tag">Women</li><li class="tag">Leadership</li></ul>
+      </article>
+      <article class="terr-card reveal" data-delay="3">
+        <svg class="card-petal" aria-hidden="true"><use href="#petal"/></svg>
+        <div class="terr-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="10" rx="6" ry="7.5"/><path d="M12 17.5V21M9 21h6"/><path d="M9.5 7.5c.6-1.2 1.6-2 2.8-2.2"/></svg></div>
+        <h3 data-i18n="terr.persp">Perspectives</h3>
+        <p class="line" data-i18n="terr.perspL">How we understand, question &amp; engage with the world.</p>
+        <ul class="tags" data-i18n="terr.perspT"><li class="tag">Civic Engagement</li><li class="tag">Human Rights</li><li class="tag">Policy</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4. GROWTH PHILOSOPHY (static wine background) ============ -->
+<section class="section on-wine philosophy" id="philosophy" aria-labelledby="phil-title" style="background-color:#68283A;color:#F7F1E8">
+  <div class="container phil-inner">
+    <p class="eyebrow" data-i18n="phil.eyebrow">Growth Philosophy</p>
+    <h2 id="phil-title" class="visually-hidden" data-i18n="phil.title">From a single thought to shared change</h2>
+    <div class="phil-track">
+      <span class="phil-line" aria-hidden="true"><span class="phil-fill"></span></span>
+      <ol class="phil-words">
+        <li><button type="button" class="pw" aria-expanded="false" aria-controls="pw-d1"><span class="pw-dot" aria-hidden="true"></span><span class="pw-label" data-i18n="phil.n1">Ideas</span></button><p class="pw-desc" id="pw-d1" data-i18n="phil.d1">New thoughts, questions and possibilities.</p></li>
+        <li><button type="button" class="pw" aria-expanded="false" aria-controls="pw-d2"><span class="pw-dot" aria-hidden="true"></span><span class="pw-label" data-i18n="phil.n2">People</span></button><p class="pw-desc" id="pw-d2" data-i18n="phil.d2">Ideas connect with people's experiences, needs and realities.</p></li>
+        <li><button type="button" class="pw" aria-expanded="false" aria-controls="pw-d3"><span class="pw-dot" aria-hidden="true"></span><span class="pw-label" data-i18n="phil.n3">Perspectives</span></button><p class="pw-desc" id="pw-d3" data-i18n="phil.d3">Understanding deepens and we begin to see differently.</p></li>
+        <li><button type="button" class="pw" aria-expanded="false" aria-controls="pw-d4"><span class="pw-dot" aria-hidden="true"></span><span class="pw-label" data-i18n="phil.n4">Participation</span></button><p class="pw-desc" id="pw-d4" data-i18n="phil.d4">People join conversation, community, civic life and meaningful action.</p></li>
+        <li><button type="button" class="pw" aria-expanded="false" aria-controls="pw-d5"><span class="pw-dot" aria-hidden="true"></span><span class="pw-label" data-i18n="phil.n5">Change</span></button><p class="pw-desc" id="pw-d5" data-i18n="phil.d5">From this engagement, the possibility of change is born.</p></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. IMPACT ============ -->
+<section class="section" id="impact" aria-labelledby="impact-title">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow reveal" data-i18n="impact.eyebrow">Impact</p>
+      <h2 id="impact-title" class="h2 split" data-i18n="impact.title">Growth you can <em>count.</em></h2>
+    </div>
+    <ul class="stats">
+      <li class="stat lead-stat rise"><span class="num"><span data-count="2500" data-sep="1">2,500</span>+</span><p data-i18n="impact.s1">people reached online</p></li>
+      <li class="stat rise"><span class="num" data-count="150">150</span><p data-i18n="impact.s2">joined in person</p></li>
+      <li class="stat rise"><span class="num" data-count="15">15</span><p data-i18n="impact.s3">women trained · ReCraft</p></li>
+      <li class="stat rise"><span class="num">#<span data-count="1">1</span><small data-i18n="impact.of">of <span>121</span></small></span><p data-i18n="impact.s4">Solution Hunt 2.0</p></li>
+      <li class="stat rise"><span class="num"><span data-count="20">20</span>+</span><p data-i18n="impact.s5">trainings joined since 2022</p></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 6. JOURNEY ============ -->
+<section class="section rule-top journey" id="journey" aria-labelledby="journey-title">
+  <div class="container journey-grid">
+    <div class="section-head">
+      <p class="eyebrow reveal" data-i18n="journey.eyebrow">Journey</p>
+      <h2 id="journey-title" class="h2 split" data-i18n="journey.title">Learning, leading <em>&amp; listening.</em></h2>
+      <p class="hint reveal" data-i18n="journey.hint">Tap a role for details</p>
+    </div>
+    <ol class="timeline">
+      <li class="t-item">
+        <details>
+          <summary><span class="t-head"><h3 data-i18n="j1.role">Facilitator</h3><span class="t-meta"><span>Youth Ending Hunger Bangladesh</span> · <span data-i18n="j1.date">2023–2026</span></span><span class="t-line" data-i18n="j1.l">Interactive sessions on youth leadership.</span></span><span class="t-toggle" aria-hidden="true"></span></summary>
+          <p class="t-more" data-i18n="j1.d">Interactive sessions on social issues, youth leadership and development; engaged diverse participants and encouraged active participation.</p>
+        </details>
+      </li>
+      <li class="t-item">
+        <details>
+          <summary><span class="t-head"><h3 data-i18n="j2.role">Master Trainer</h3><span class="t-meta"><span>SAVE Youth Network (IFES, USAID)</span> · <span data-i18n="j2.date">2024–2026</span></span><span class="t-line" data-i18n="j2.l">Leadership and teamwork training.</span></span><span class="t-toggle" aria-hidden="true"></span></summary>
+          <p class="t-more" data-i18n="j2.d">Training on leadership, teamwork and social awareness; mentored young participants to build confidence and communication skills.</p>
+        </details>
+      </li>
+      <li class="t-item">
+        <details>
+          <summary><span class="t-head"><h3 data-i18n="j3.role">Ambassador Coordinator</h3><span class="t-meta"><span>Creative Captain Academy</span> · <span data-i18n="j3.date">2021–Present</span></span><span class="t-line" data-i18n="j3.l">Leading youth-engagement ambassador teams.</span></span><span class="t-toggle" aria-hidden="true"></span></summary>
+          <p class="t-more" data-i18n="j3.d">Led and coordinated ambassador teams for youth-engagement activities; strengthened team performance through guidance and motivation.</p>
+        </details>
+      </li>
+      <li class="t-item">
+        <details>
+          <summary><span class="t-head"><h3 data-i18n="j4.role">Project Lead</h3><span class="t-meta"><span>ReCraft Initiative</span> · <span data-i18n="j4.date">2024–Present</span></span><span class="t-line" data-i18n="j4.l">Recycling project; 15 women trained.</span></span><span class="t-toggle" aria-hidden="true"></span></summary>
+          <p class="t-more" data-i18n="j4.d">Youth-driven sustainability and recycling project; coordinated volunteers; trained 15 women living in Barishal slum areas.</p>
+        </details>
+      </li>
+      <li class="t-item">
+        <details>
+          <summary><span class="t-head"><h3 data-i18n="j5.role">Project Lead</h3><span class="t-meta"><span>Road to Lead</span> · <span data-i18n="j5.date">2024</span></span><span class="t-line" data-i18n="j5.l">Women-leadership campaign; 2,500+ reached.</span></span><span class="t-toggle" aria-hidden="true"></span></summary>
+          <p class="t-more" data-i18n="j5.d">Designed a women-leadership awareness campaign; surveyed women leaders from 10 clubs at the University of Barishal; organised an art competition on women empowerment, connecting 150 people in person and 2,500+ online.</p>
+        </details>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ 7. LEADERSHIP & RECOGNITION: marquees ============ -->
+<section class="section rule-top marquees" aria-labelledby="lr-title">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow reveal" data-i18n="lr.eyebrow">Leadership &amp; Recognition</p>
+      <h2 id="lr-title" class="h2 split" data-i18n="lr.title">Trusted to <em>lead</em>, invited to learn.</h2>
+    </div>
+  </div>
+  <div class="marquee" data-dir="left">
+    <ul class="marquee-track" aria-label="Leadership roles" data-i18n="lr.roles">
+      <li>Vice President · Madonna BU Art Society</li>
+      <li>General Secretary · SAVE Youth, University of Barishal</li>
+      <li>Coordinator · Youth Ending Hunger, BU District</li>
+      <li>Publications Secretary · Youth Ending Hunger, Barishal Region</li>
+      <li>Joint Coordinator · FoRB Youth Network Barishal</li>
+    </ul>
+  </div>
+  <div class="marquee marquee-alt" data-dir="right">
+    <ul class="marquee-track" aria-label="Fellowships and highlights" data-i18n="lr.hl">
+      <li><b>Winner · Solution Hunt 2.0</b></li>
+      <li>EGALE Fellowship</li>
+      <li>A360 Fellowship</li>
+      <li>Democracy: From Theory to Practice</li>
+      <li>National Policy Camp · BYLC</li>
+      <li>National Youth Conference</li>
+      <li>Youth Democracy Summit</li>
+      <li>Policy Hackathon 2024 · Agamir Ami</li>
+      <li>SAVE Youth Promise Leadership Summit</li>
+      <li>Panelist · Non-violent Youth Engagement</li>
+      <li>Youth Civic Engagement Workshop · American Center Dhaka</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 8. AREAS OF FOCUS: tag cloud ============ -->
+<section class="section rule-top focus" aria-labelledby="focus-title">
+  <div class="container">
+    <div class="section-head center">
+      <p class="eyebrow reveal" data-i18n="focus.eyebrow">Areas of Focus</p>
+      <h2 id="focus-title" class="h2 split" data-i18n="focus.title">What I bring <em>to the table.</em></h2>
+      <ul class="legend reveal" data-i18n="focus.legend"><li class="lg-core">Core expertise</li><li class="lg-grow">Growing thought leadership</li><li class="lg-creative">Creative</li><li class="lg-skill">Skills</li></ul>
+    </div>
+    <ul class="cloud" data-i18n="focus.cloud">
+      <li class="tg core">Youth Engagement</li><li class="tg skill">Workshop Facilitation</li><li class="tg grow">Policy</li><li class="tg creative">Art Meditation</li>
+      <li class="tg core">Leadership</li><li class="tg skill">Public Speaking</li><li class="tg grow">Advocacy</li><li class="tg core">Community Development</li>
+      <li class="tg creative">Storytelling</li><li class="tg skill">Debate</li><li class="tg core">Women Empowerment</li><li class="tg grow">Civic Engagement</li>
+      <li class="tg skill">Panel Moderation</li><li class="tg core">Facilitation</li><li class="tg creative">Creative Reflection</li><li class="tg skill">Policy Advocacy</li>
+      <li class="tg grow">Democracy</li><li class="tg core">Mentorship</li><li class="tg skill">Project Design</li><li class="tg grow">Human Rights</li>
+      <li class="tg skill">Event &amp; Program Coordination</li><li class="tg core">Social Impact</li><li class="tg creative">Art &amp; Self-expression</li><li class="tg skill">Communication &amp; PR</li>
+      <li class="tg skill">Virtual Facilitation</li><li class="tg skill">AI for Research</li><li class="tg skill">Basic Graphic Design</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 9. VALUES: flip cards ============ -->
+<section class="section rule-top" id="values" aria-labelledby="values-title">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow reveal" data-i18n="values.eyebrow">Core Values</p>
+      <h2 id="values-title" class="h2 split" data-i18n="values.title">What I try to <em>grow by.</em></h2>
+    </div>
+    <ul class="values-grid">
+      <li class="rise"><button type="button" class="vcard" aria-pressed="false"><span class="vc-inner"><span class="vc-face vc-front"><span class="n">01</span><span class="vt" data-i18n="v1.t">Purposeful Growth</span><svg class="card-petal" aria-hidden="true"><use href="#petal"/></svg></span><span class="vc-face vc-back"><span class="vl" data-i18n="v1.d">Growth should mean something.</span></span></span></button></li>
+      <li class="rise"><button type="button" class="vcard" aria-pressed="false"><span class="vc-inner"><span class="vc-face vc-front"><span class="n">02</span><span class="vt" data-i18n="v2.t">Curiosity &amp; Critical Thinking</span><svg class="card-petal" aria-hidden="true"><use href="#petal"/></svg></span><span class="vc-face vc-back"><span class="vl" data-i18n="v2.d">Ask more. Explore deeper. Think better.</span></span></span></button></li>
+      <li class="rise"><button type="button" class="vcard" aria-pressed="false"><span class="vc-inner"><span class="vc-face vc-front"><span class="n">03</span><span class="vt" data-i18n="v3.t">People First</span><svg class="card-petal" aria-hidden="true"><use href="#petal"/></svg></span><span class="vc-face vc-back"><span class="vl" data-i18n="v3.d">People at the heart of progress.</span></span></span></button></li>
+      <li class="rise"><button type="button" class="vcard" aria-pressed="false"><span class="vc-inner"><span class="vc-face vc-front"><span class="n">04</span><span class="vt" data-i18n="v4.t">Reflection Before Reaction</span><svg class="card-petal" aria-hidden="true"><use href="#petal"/></svg></span><span class="vc-face vc-back"><span class="vl" data-i18n="v4.d">Pause. Reflect. Respond.</span></span></span></button></li>
+      <li class="rise"><button type="button" class="vcard" aria-pressed="false"><span class="vc-inner"><span class="vc-face vc-front"><span class="n">05</span><span class="vt" data-i18n="v5.t">Courageous &amp; Responsible Voice</span><svg class="card-petal" aria-hidden="true"><use href="#petal"/></svg></span><span class="vc-face vc-back"><span class="vl" data-i18n="v5.d">Speak when it matters, responsibly.</span></span></span></button></li>
+      <li class="rise"><button type="button" class="vcard" aria-pressed="false"><span class="vc-inner"><span class="vc-face vc-front"><span class="n">06</span><span class="vt" data-i18n="v6.t">Perspectives Create Possibilities</span><svg class="card-petal" aria-hidden="true"><use href="#petal"/></svg></span><span class="vc-face vc-back"><span class="vl" data-i18n="v6.d">See differently, act differently.</span></span></span></button></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 10. MANIFESTO (static wine background) ============ -->
+<section class="section on-wine manifesto-band" id="manifesto" aria-label="Manifesto" style="background-color:#68283A;color:#F7F1E8">
+  <svg class="band-bloom draw" viewBox="0 0 120 120" aria-hidden="true">
+    <path pathLength="1" d="M60 60C40 48 34 22 60 4c26 18 20 44 0 56z"/>
+    <path pathLength="1" d="M60 60C72 40 98 34 116 60c-18 26-44 20-56 0z"/>
+    <path pathLength="1" d="M60 60C72 80 98 86 104 112c-26 4-44-20-44-52z"/>
+    <path pathLength="1" d="M60 60C48 80 22 86 16 112c26 4 44-20 44-52z"/>
+    <path pathLength="1" d="M60 60C48 40 22 34 4 60c18 26 44 20 56 0z"/>
+  </svg>
+  <div class="container">
+    <p class="manifesto">
+      <span class="ml" data-i18n="m1">Think Deeply.</span>
+      <span class="ml" data-i18n="m2">Care Genuinely.</span>
+      <span class="ml" data-i18n="m3">Create Meaningfully.</span>
+      <span class="ml" data-i18n="m4">Speak Responsibly.</span>
+    </p>
+  </div>
+</section>
+
+<!-- ============ 11. EDUCATION ============ -->
+<section class="section edu" aria-labelledby="edu-title">
+  <div class="container">
+    <p class="eyebrow reveal" data-i18n="edu.eyebrow">Education</p>
+    <h2 id="edu-title" class="visually-hidden" data-i18n="edu.title">Education</h2>
+    <ul class="edu-lines">
+      <li class="rise"><b data-i18n="edu.1">MSS, Political Science</b><span data-i18n="edu.1d">University of Barishal · ongoing</span></li>
+      <li class="rise"><b data-i18n="edu.2">BSS, Political Science</b><span data-i18n="edu.2d">University of Barishal · CGPA 3.35/4</span></li>
+      <li class="rise"><b data-i18n="edu.3">HSC (Science)</b><span data-i18n="edu.3d">Babugonj Degree College · GPA 5/5</span></li>
+      <li class="rise"><b data-i18n="edu.4">SSC (Science)</b><span data-i18n="edu.4d">Babugonj Govt High School · GPA 5/5</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 12. CONNECT (static wine background) ============ -->
+<section class="section on-wine connect" id="connect" aria-labelledby="connect-title" style="background-color:#68283A;color:#F7F1E8">
+  <div class="container connect-inner">
+    <p class="eyebrow" data-i18n="connect.eyebrow">Connect</p>
+    <h2 id="connect-title" class="split" data-i18n="connect.title">Let's grow something <em>meaningful</em> together.</h2>
+
+    <p class="invite-label" data-i18n="connect.invite">Invite me for</p>
+    <ul class="invite" data-i18n="connect.chips"><li>Workshop Facilitation</li><li>Youth Leadership Training</li><li>Panel &amp; Moderation</li><li>Women Empowerment Initiatives</li><li>Community Projects</li><li>Collaborations</li></ul>
+
+    <div class="contact-row">
+      <a href="mailto:siqra.bu@gmail.com" class="contact-link link-grow"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5 12 13l8.5-6.5"/></svg></span>siqra.bu@gmail.com</a>
+      <a href="tel:+8801621521421" class="contact-link link-grow"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 3.5h2.6l1.4 4-2 1.3a12 12 0 0 0 6.6 6.6l1.3-2 4 1.4v2.6a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4.6 5.7a2 2 0 0 1 2-2.2z"/></svg></span><span data-i18n="connect.phone">01621 521421</span></a>
+    </div>
+
+    <div class="connect-foot">
+      <!-- Social links are hidden until real URLs exist (no dead "#" links on the live site).
+           To add one, paste its line inside a <ul class="social"> here, then add the same URL to "sameAs" in the JSON-LD in <head>:
+           <li><a href="https://www.linkedin.com/in/YOUR-PROFILE" aria-label="LinkedIn" target="_blank" rel="noopener">…LinkedIn icon svg…</a></li>
+           The four icon SVGs (LinkedIn, Facebook, Instagram, YouTube) are kept in README.md under "Add the social links". -->
+      <a href="assets/Sabekunnahar_Iqra_Resume.pdf" class="btn btn-outline magnetic" download><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 10.5l5 5 5-5M5 20h14"/></svg><span data-i18n="connect.resume">Download Resume</span></a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ 13. FOOTER (static wine-deep background) ============ -->
+<footer class="site-footer" style="background-color:#4F1E2C;color:#F7F1E8">
+  <div class="container footer-grid">
+    <div>
+      <a href="#top" class="brand"><svg aria-hidden="true"><use href="#bloom-light"/></svg><span>Blooming <em>Iqra</em></span></a>
+      <p class="slogan" data-i18n="footer.slogan">Growing Ideas, People &amp; Perspectives.</p>
+    </div>
+    <div class="footer-meta">
+      <p data-i18n="footer.copy">© 2026 Blooming Iqra · Sabekunnahar Iqra</p>
+      <p class="credit" data-i18n="footer.credit">Brand by Captain · Creative Captain7</p>
+    </div>
+    <button class="to-top" type="button" aria-label="Back to top" data-i18n-aria="footer.top"><svg aria-hidden="true"><use href="#bloom-light"/></svg></button>
+  </div>
+</footer>
+
+<script src="assets/js/vendor/gsap.min.js?v=3.15.1" defer></script>
+<script src="assets/js/vendor/ScrollTrigger.min.js?v=3.15.1" defer></script>
+<script src="assets/js/vendor/lenis.min.js?v=1.3.27" defer></script>
+<script src="assets/js/main.js?v=202611230800" defer></script>
+</body>
+</html>
